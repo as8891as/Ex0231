@@ -2,18 +2,18 @@ package com.example.ex0231.ex2;
 
 public class Kibbutz {
     private Vehicles[] vehiclesInKibbutz;
+    private int count;
 
     public Kibbutz() {
-        vehiclesInKibbutz = new Vehicles[0];
+        vehiclesInKibbutz = new Vehicles[500];
+        count = 0;
     }
 
     public void insertVehicle(Vehicles vehicle) {
-        Vehicles[] newKibbutz = new Vehicles[vehiclesInKibbutz.length+1];
-        for (int i=0;i<vehiclesInKibbutz.length;i++) {
-            newKibbutz[i] = vehiclesInKibbutz[i];
+        vehiclesInKibbutz[count] = vehicle;
+        if (count!=500) {
+            count++;
         }
-        newKibbutz[vehiclesInKibbutz.length] = vehicle;
-        vehiclesInKibbutz = newKibbutz;
     }
 
     private Vehicles[] getOldVehicles() {
