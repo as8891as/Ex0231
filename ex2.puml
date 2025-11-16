@@ -1,0 +1,128 @@
+@startuml
+class com.example.ex0231.ex2.Light {
+- boolean hasEngine
++ boolean getHasEngine()
++ void setHasEngine(boolean)
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.MainClass {
++ {static} double sumPollution(Vehicles[])
++ {static} void noiseMade(Vehicles[])
++ {static} int sumPassengers(Vehicles[])
++ {static} String longestCharge(Vehicles[])
+}
+
+class com.example.ex0231.ex2.Vehicles {
+- String carNumber
+- double carAge
+- int numWheels
+- String steeringShape
+- double pollutionPerMinute
++ String getCarNumber()
++ void setCarNumber(String)
++ double getCarAge()
++ void setCarAge(double)
++ int getNumWheels()
++ void setNumWheels(int)
++ String getSteeringShape()
++ void setSteeringShape(String)
++ double getPollutionPerMinute()
++ void setPollutionPerMinute(double)
++ double exhaust()
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.Coupe {
+- String roofType
++ String getRoofType()
++ void setRoofType(String)
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.Regular {
+- int numPassengers
++ int getNumPassengers()
++ void setNumPassengers(int)
++ double exhaust()
++ void noise()
++ int hitchhikers()
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.Tractor {
+- String[] trailerTypes
++ String[] getTrailerTypes()
++ void setTrailerTypes(String[])
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.IceCreamTruck {
+- String[] iceCreamFlavors
++ String[] getIceCreamFlavors()
++ void setIceCreamFlavors(String[])
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.Cart {
+- double loadingTime
++ double getLoadingTime()
++ void setLoadingTime(double)
++ double exhaust()
++ int hitchhikers()
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.Bicycle {
+- boolean hasBasket
++ boolean isHasBasket()
++ void setHasBasket(boolean)
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.Kibbutz {
+- Vehicles[] vehiclesInKibbutz
++ void insertVehicle(Vehicles)
+- Vehicles[] getOldVehicles()
+- int getNumLightSteeringVehicles()
+}
+
+
+class com.example.ex0231.ex2.Heavy {
+- int numTrailersCarriable
++ int getNumTrailersCarriable()
++ void setNumTrailersCarriable(int)
++ double exhaust()
++ String toString()
+}
+
+
+class com.example.ex0231.ex2.Truck {
+- double maxLoad
++ double getMaxLoad()
++ void setMaxLoad(double)
++ double exhaust()
++ String toString()
+}
+
+
+
+
+com.example.ex0231.ex2.Vehicles <|-- com.example.ex0231.ex2.Light
+com.example.ex0231.ex2.Regular <|-- com.example.ex0231.ex2.Coupe
+com.example.ex0231.ex2.Vehicles <|-- com.example.ex0231.ex2.Regular
+com.example.ex0231.ex2.Heavy <|-- com.example.ex0231.ex2.Tractor
+com.example.ex0231.ex2.Truck <|-- com.example.ex0231.ex2.IceCreamTruck
+com.example.ex0231.ex2.Light <|-- com.example.ex0231.ex2.Cart
+com.example.ex0231.ex2.Light <|-- com.example.ex0231.ex2.Bicycle
+com.example.ex0231.ex2.Vehicles <|-- com.example.ex0231.ex2.Heavy
+com.example.ex0231.ex2.Heavy <|-- com.example.ex0231.ex2.Truck
+@enduml
