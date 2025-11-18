@@ -10,7 +10,7 @@ public class Kibbutz {
     }
 
     public void insertVehicle(Vehicles vehicle) {
-        vehiclesInKibbutz[count] = vehicle;
+        vehiclesInKibbutz[count-1] = vehicle;
         if (count!=500) {
             count++;
         }
